@@ -1,5 +1,5 @@
 # Pull from base Ubuntu image
-FROM ubuntu:14:04
+FROM ubuntu:14.04
 # Do system updates and install dependencies
 RUN apt-get update
 RUN sudo apt-get -y install git wget

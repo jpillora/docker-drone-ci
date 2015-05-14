@@ -20,7 +20,7 @@ docker run \
     -v /opt/drone/drone.sqlite:/var/lib/drone/drone.sqlite \
     -e DRONE_FOO=foo \
     -e DRONE_BAR=bar \
-    jpillora/drone-ci:0.1.0
+    quay.io/jpillora/drone-ci:latest
 ```
 
 Visit [Drone Setup](https://github.com/drone/drone#setup) and scroll down to the environment variables section. Add in as many `-e DRONE_...` variables as you need. I'm using @sameersbn's [docker-gitlab](https://github.com/sameersbn/docker-gitlab) image along side this one so I just needed the Gitlab settings: `DRONE_GITLAB_URL` which is used for the authentication callback and `DRONE_GITLAB_[CLIENT|SECRET]` for the Gitlab application permissions.

@@ -2,11 +2,12 @@
 FROM ubuntu:14.04
 # Do system updates and install dependencies
 RUN apt-get update
-RUN sudo apt-get -y install git wget
+RUN sudo apt-get -y install git curl
 RUN apt-get clean
 # Download Drone.io
-RUN wget http://downloads.drone.io/master/drone.deb?nocache=20150731
-RUN dpkg -i drone.deb
+RUN curl http://downloads.drone.io/master/drone.deb?nocache=20150731 -O /tmp/drone.deb
+RUN dpkg -i /tmp/drone.deb
+RUN rm /tmp/drone.deb
 # Expose the Drone.io port
 EXPOSE 8080
 # Default port

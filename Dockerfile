@@ -5,7 +5,7 @@ RUN apt-get update
 RUN sudo apt-get -y install git wget
 RUN apt-get clean
 # Download Drone.io
-RUN wget http://downloads.drone.io/master/drone.deb
+RUN wget http://downloads.drone.io/master/drone.deb?nocache=20150731
 RUN dpkg -i drone.deb
 # Expose the Drone.io port
 EXPOSE 8080
